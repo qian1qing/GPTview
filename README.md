@@ -1,6 +1,7 @@
 # GPTview Extension
 
 This is a Visual Studio Code extension that allows you to view ChatGPT in a WebView.
+该扩展的核心功能是通过 VS Code 的 Webview API，在编辑器中嵌入 ChatGPT 网页，用户可通过命令面板（Ctrl+Shift+P）输入 Open ChatGPT in Webview 触发命令，快速在 VS Code 中打开 ChatGPT 进行交互，无需切换到浏览器。
 
 ## Features
 
