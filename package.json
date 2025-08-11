@@ -3,7 +3,7 @@
   "displayName": "GPTview",
   "description": "A VSCode extension to view ChatGPT of html web",
   "version": "0.0.1",
-  "publisher": "潜潜庆",
+  "publisher": "qianqianqing",
   "engines": {
     "vscode": "^1.103.0"
   },
