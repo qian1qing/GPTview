@@ -1,0 +1,56 @@
+{
+  "name": "gptview",
+  "displayName": "GPTview",
+  "description": "A VSCode extension to view ChatGPT of html web",
+  "version": "0.0.1",
+  "publisher": "潜潜庆",
+  "engines": {
+    "vscode": "^1.103.0"
+  },
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/qian1qing/GPTview.git"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": ["onCommand:gptview.openChatGPT"],
+  "browser": "./dist/web/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gptview.openChatGPT",
+        "title": "Open ChatGPT in Webview"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/web/test/suite/extensionTests.js",
+    "pretest": "npm run compile-web",
+    "vscode:prepublish": "npm run package-web",
+    "compile-web": "npm run check-types && npm run lint && node esbuild.js",
+    "watch-web": "npm-run-all -p watch-web:*",
+    "watch-web:esbuild": "node esbuild.js --watch",
+    "watch-web:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package-web": "npm run check-types && npm run lint && node esbuild.js --production",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.102.0",
+    "@types/mocha": "^10.0.10",
+    "@types/assert": "^1.5.11",
+    "eslint": "^9.32.0",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
+    "mocha": "^11.7.1",
+    "typescript": "^5.9.2",
+    "@vscode/test-web": "^0.0.72",
+    "esbuild": "^0.25.8",
+    "glob": "^11.0.3",
+    "npm-run-all": "^4.1.5",
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "assert": "^2.1.0"
+  }
+}
